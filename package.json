@@ -1,0 +1,24 @@
+{
+  "name": "opendl",
+  "version": "1.0.0",
+  "description": "An open-source YouTube-downloading website with ytdl-core in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redbrain/opendl.git"
+  },
+  "author": "redbrain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redbrain/opendl/issues"
+  },
+  "homepage": "https://github.com/redbrain/opendl#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ffmpeg-static": "^4.3.0",
+    "ytdl-core": "^4.7.0"
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>opendl</title>
+        <style>body{margin:0;height:100vh;display:flex;flex-direction:column;text-align:center;align-items:center;justify-content:center;background:#282a36;color:#f8f8f2;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-size:4vh}body *{margin:1vh}input,select{background:#44475a;color:inherit;font-family:inherit;font-size:inherit;outline:0;border-radius:.25em}input[type=text]{width:50vw;border:0;border-bottom:.5vh solid #6272a4}input::placeholder{color:#6272a4}input[type=submit],select{border:.3vh solid #6272a4}</style>
+    </head>
+    <body>
+        <span style="font-size:3em">opendl</span>
+        <span>a fast and transparent youtube downloader</span>
+        <form method="POST" action="/dl">
+            <input type="text" placeholder="video link/id" name="url"></input>
+            <select name="type"><option value="a">audio (mp3)</option><option value="v">audio+video (mp4)</option></select>
+            <input type="submit" value="download">
+        </form>
+        <span style="font-size:8px">source: tba</source>
+    </body>
+</html>
