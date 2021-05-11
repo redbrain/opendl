@@ -9,4 +9,4 @@ npm install
 npm run test
 ```
 
-[Public version](https://github.io/redbrain/opendl) (using RunKit for the backend)
+[Public version](https://redbrain.github.io/opendl) (using RunKit for the backend)
