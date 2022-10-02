@@ -24,9 +24,9 @@ app.post('/dl', async (req, res) => {
         proc.stdio[4].pipe(res);
     } else { // otherwise type must be v
         res.attachment(info.videoDetails.title+' (opendl).mp4'); // make browser treat as attachment
-        const audio = ytdl.downloadFromInfo(info,{quality:'highestaudio'});
+        const audio = ytdl.downloadFromInfo(info,{quality:'highestaudio',filter:f=>f.container==='m4a'});
         const video = ytdl.downloadFromInfo(info,{quality:'highestvideo',filter:f=>f.container==='mp4'});
-        const proc = spawn(ffmpeg, ['-loglevel', '8', '-i', 'pipe:3', '-i', 'pipe:4', '-map', '0:a', '-map', '1:v', '-vcodec', 'copy', '-movflags', 'frag_keyframe+empty_moov', '-f', 'mp4', 'pipe:5'], {stdio:['inherit','inherit','inherit','pipe','pipe','pipe']}); // convert to mp4
+        const proc = spawn(ffmpeg, ['-loglevel', '8', '-i', 'pipe:3', '-i', 'pipe:4', '-map', '0:a', '-map', '1:v', '-c', 'copy', '-movflags', 'frag_keyframe+empty_moov', '-f', 'mp4', 'pipe:5'], {stdio:['inherit','inherit','inherit','pipe','pipe','pipe']}); // convert to mp4
         audio.pipe(proc.stdio[3]);
         video.pipe(proc.stdio[4]);
         proc.stdio[5].pipe(res);
